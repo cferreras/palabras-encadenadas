@@ -1,0 +1,16 @@
+/* You can add global styles to this file, and also import other style files */
+
+html {
+  font-size: 18px;
+}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import '~animate.css/animate.min';
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+
+
+  body {
+    @apply bg-lime-700 transition-colors duration-3000;
+  }
+

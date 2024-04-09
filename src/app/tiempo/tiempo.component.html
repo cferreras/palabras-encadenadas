@@ -1,0 +1,34 @@
+<div (click)="toggleMenu()" class="relative">
+  <div
+    class="border font-medium text-lg relative right-0 border-white inline-flex select-none ml-auto gap-.5 text-center px-1 justify-between items-center animate__animated  rounded-md group focus-within:outline"
+    [ngClass]="{ animate__flash: flash }">
+    <span class="focus:outline-none text-white"
+      [ngClass]="{ 'cursor-pointer': isEditable, 'cursor-default': !isEditable }">
+      {{ time }}
+    </span>
+    <span>
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 22 22" stroke-width="1.5" stroke="currentColor"
+        class="w-5 h-5 stroke-white">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+      </svg>
+    </span>
+
+
+
+
+  </div>
+  <div [ngClass]="{hidden: !menu}"
+    class="absolute z-50 right-0 mt-2 w-32 rounded-md shadow-lg bg-lime-700 ring-1 ring-white  focus:outline-none"
+    role="menu" aria-orientation="vertical" aria-labelledby="menu-button" tabindex="-1">
+    <div class="py-1 divide-y divide-white divide-opacity-20" role="none">
+      <!-- Active: "bg-gray-100 text-gray-900", Not Active: "text-white" -->
+      <button (click)="setTime(10)" class="text-white block px-4 py-2 text-sm w-full">10
+        Segundos</button>
+      <button (click)="setTime(30)" class="text-white block px-4 py-2 text-sm w-full">30
+        Segundos</button>
+      <button (click)="setTime(60)" class="text-white block px-4 py-2 text-sm w-full">60
+        Segundos</button>
+    </div>
+
+  </div>
+</div>

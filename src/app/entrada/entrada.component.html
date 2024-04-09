@@ -1,0 +1,25 @@
+<div class="border-b-2 border-white w-full pb-1 text-xl flex self-auto animate__animated"
+  [ngClass]="{animate__headShake: headShake}">
+  <span class="uppercase text-3xl font-extrabold text-white">{{silaba}}</span>
+  <input autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" autofocus
+    (keydown.enter)="onSubmitWorld($event)" (input)="setGameStart()" type="text" [(ngModel)]="palabra"
+    (change)="setGameStart()"
+    class="w-full focus:outline-none focus:border-0 uppercase text-3xl font-extrabold bg-transparent text-white">
+</div>
+<div class="text-sm pt-1.5 flex items-center text-white">
+  <span *ngIf="icon === 'default'">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5 fill-white">
+      <path fill-rule="evenodd"
+        d="M14.78 14.78a.75.75 0 0 1-1.06 0L6.5 7.56v5.69a.75.75 0 0 1-1.5 0v-7.5A.75.75 0 0 1 5.75 5h7.5a.75.75 0 0 1 0 1.5H7.56l7.22 7.22a.75.75 0 0 1 0 1.06Z"
+        clip-rule="evenodd" />
+    </svg>
+  </span>
+  <span *ngIf="icon === 'unknown' || icon === 'repeated'">
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 25 25" stroke-width="1.5" stroke="currentColor"
+      class="w-4 h-4 stroke-white">
+      <path stroke-linecap="round" stroke-linejoin="round"
+        d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126ZM12 15.75h.007v.008H12v-.008Z" />
+    </svg>
+  </span>
+  {{message}}
+</div>
